@@ -11,6 +11,7 @@ App Web feito para estudo do Asp.Net
 ## Funcionalidades
 <p>Cadastro de Receitas</p>
 <p>Cadastro de Usuários</p>
+<p>Login implementado, Logout e permissões por se completar</p>
 <p>Comentários por Receitas (por completar)</p>
 <p>Listagem de receitas por categorias</p>
 
