@@ -1,0 +1,63 @@
+﻿@model receitando.Models.CategoriaDetalhes
+
+@{
+    ViewBag.Title = "Detalhes";
+}
+
+<hr />
+<h2>@Html.DisplayFor(model => model.categoria.Descricao)</h2>
+<br />
+<input type='button' onclick='history.back();' value='Voltar' class="btn btn-warning" />
+<div>
+    <h4>Lista de Receitas </h4>
+</div>
+
+
+@*-------------------------------Lista de receitas--------------------------------------*@
+
+@if (Model.receita.Count == 0)
+{
+
+    <h5>Sem Receitas para esta Categoria</h5>
+}
+else
+{
+    foreach (var item in Model.receita)
+    {
+        @Html.DisplayFor(modelItem => item.Imagem)
+    <table class="table table-bordered">
+        <tr class="btn-primary">
+            <th>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </th>
+            <th>Ingredientes</th>
+
+            <th></th>
+        </tr>
+                   
+            <tr>
+                 
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                <br />
+                    @Html.DisplayFor(modelItem => item.dataPublicacao)
+                    <br />
+                    @Html.DisplayFor(modelItem => item.Sugestoes)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ingredientes)
+                </td>
+                <td>
+                    <a class="btn-floating center" href=@Url.Action("Details", "Receita", new {id = item.Id})><span class="glyphicon glyphicon-eye-open"></span></a>
+                    <a class="btn-floating  orange center" href=@Url.Action("CreateUpdate", "Receita", new {id = item.Id})><span class="glyphicon glyphicon-pencil"></span></a>
+                    <a class="btn-floating red center" href=@Url.Action("Delete", "Receita", new {id = item.Id})><span class="glyphicon glyphicon-trash"></span></a>
+
+                </td>
+
+            </tr>
+        
+
+
+    </table>
+    }
+}

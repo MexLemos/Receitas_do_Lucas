@@ -1,0 +1,112 @@
+﻿
+
+@model IEnumerable<receitando.Models.Categoria>
+@{
+    ViewBag.Title = "Home";
+}   
+        <!-- banner section start -->
+        <div class="banner_section layout_padding">
+            
+            <div class="container">
+                <div id="banner_slider" class="carousel slide" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="banner_img"><img src="~/Content/images/prato1.jpg"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="banner_taital_main">
+                                        <h1 class="banner_taital">Receitas</h1>
+                                        <h1 class="tasty_text">do Lucas</h1>
+                                        <p class="banner_text">Delicioso | Saboroso | Apetitoso | Fácil de uasr!</p>
+                                        <div class="btn_main">
+                                            <div class="about_bt"><a href=@Url.Action("About", "Home")><span></span>Sobre Nós</a></div>
+                                            <div class="callnow_bt active"><a href=@Url.Action("Contact", "Home")><span></span>Contactos</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="banner_img"><img src="~/Content/images/lucas.jpg"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="banner_taital_main">
+                                        <h1 class="banner_taital">Receitas </h1>
+                                        <h1 class="tasty_text">do Lucas</h1>
+                                        <p class="banner_text">Delicioso | Saboroso | Apetitoso | Fácil de uasr!</p>
+                                        <div class="btn_main">
+                                            <div class="about_bt"><a href=@Url.Action("About", "Home")><span></span>Sobre Nós</a></div>
+                                            <div class="callnow_bt active"><a href=@Url.Action("Contact", "Home")><span></span>Contactos</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="banner_img"><img src="~/Content/images/prato3.jpg"></div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="banner_taital_main">
+                                        <h1 class="banner_taital">Receitas </h1>
+                                        <h1 class="tasty_text">do Lucas</h1>
+                                        <p class="banner_text">Receitas de Bolos, Doces, Pequeno-almoço</p>
+                                        <div class="btn_main">
+                                            <div class="about_bt">
+                                            <a href=@Url.Action("About", "Home")><span></span>Sobre Nós</a></div>
+                                            <div class="callnow_bt active"><a href=@Url.Action("Contact", "Home")><span></span>Contactos</a></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#banner_slider" role="button" data-slide="prev">
+                        <i class="fa fa-arrow-left"> >> </i>
+                    </a>
+                    <a class="carousel-control-next" href="#banner_slider" role="button" data-slide="next">
+                        <i class="fa fa-arrow-right"><< </i>
+                    </a>             
+                </div>
+
+                
+            </div>
+        </div>
+
+
+<!-- coffee section start -->
+
+        <div class="row">
+            <h1 class="coffee_taital">NOSSAS RECEITAS</h1>
+            
+        </div>
+    
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+
+                <div class="carousel-item active">
+                    <div class="container-fluid">
+                        <div class="row">
+                            @foreach (var item in Model)
+                            {
+
+                            <div class="col-lg-2 col-md-8">
+                                
+                                        <div class="about_bt"><a class="btn btn-primary btn-lg" href=@Url.Action("Detalhes", "Categoria", new { id = item.Id })>@Html.DisplayFor(modelItem => item.Descricao)</a></div>
+                                
+                            </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+
+                
+            </div>
+          
+        </div>
+   

@@ -1,0 +1,43 @@
+﻿@model receitando.Models.Usuario
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h4>Usuarios</h4>
+
+<h1><span class="glyphicon glyphicon-trash red-text">Exclusão</span></h1>
+<h5><strong class="red-text"> Deseja realmente excluir o Usuário "@Html.DisplayFor(model => model.Nome)" do sistema?</strong></h5>
+<div>
+    <h6>Detalhes</h6>
+
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+        <dt>
+            @Html.DisplayNameFor(model => model.email)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.email)
+        </dd>
+    </dl>
+    <hr />
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-danger" />
+            <input type='button' onclick='history.back();' value='Voltar' class="btn btn-warning" />
+        </div>
+    }
+</div>

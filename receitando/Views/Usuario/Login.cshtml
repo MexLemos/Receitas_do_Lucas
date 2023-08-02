@@ -1,0 +1,56 @@
+﻿@model receitando.Models.Usuario
+@{
+    ViewBag.Title = "Login";
+}
+
+<div class="about_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="about_taital_main">
+                    <h1 class="coffee_taital">Faça o seu Login</h1>
+                        <section id="loginForm">
+                            @using (Html.BeginForm())
+                            {
+                                @Html.AntiForgeryToken()
+                                <hr />
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div style="padding:0;margin-bottom:20px">
+                                    <h5 class="grey-text" style="padding:0;margin:0"><span class="glyphicon glyphicon-user">Email:</span></h5>
+                                    @Html.TextBoxFor(m => m.email, new { @class = "form-control" } )
+                                    @Html.ValidationMessageFor(m => m.email, "", new { @class = "text-danger" })
+                                </div>
+
+                                <div style="padding:0;margin-bottom:20px">
+                                    <h5 class="grey-text" style="padding:0;margin:0"><span class="glyphicon glyphicon-eye-close">Senha:</span></h5>
+                                    @Html.PasswordFor(m => m.Senha, new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(m => m.Senha, "", new { @class = "text-danger" })
+                                </div>
+
+                                    <div class="form-group">
+                                        <div class="col-md-offset-2 col-md-12">
+                                            <input type="submit" value="Log in" class="btn btn-warning" />
+                                            <br />
+                                            <p>
+                                                @Html.ActionLink("Esqueceu sua Senha?", "ForgotPassword")
+                                            </p> 
+                                        </div>
+                                        
+                                       
+                                    </div>
+
+                                    
+                                    <div class="col-md-offset-2 col-md-10">
+                                        <input type='button' onclick='history.back();' value='Voltar' class="btn btn-warning" />
+                                    </div>
+                            }
+                        </section>
+                    </div>
+            </div>
+            <div class="col-md-6">
+                <div class="about_img"><img src="~/Content/images/icon-7.png"></div>
+            </div>
+        </div>
+    </div>
+    </div>
+

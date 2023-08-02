@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewBag.Title = "Menu";
+}
+
+<h2 class="coffee_taital">Menu</h2>
+
+<!-- Menu section start -->
+<div class="coffee_section layout_padding">
+    <div class="container">
+        <div class="row">
+            <h1 class="coffee_taital">Bem Vindo a Área Administrativa</h1>
+
+        </div>
+        
+    </div>
+    <div class="coffee_section_2">
+        <div id="main_slider" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-lg-3 col-md-6">
+                                <a href=@Url.Action("Index", "Receita")>
+                                    <span></span>
+                                    <div class="coffee_img"><img src="~/Content/images/img-4.png"></div>
+                                    <h2>Receitas</h2>
+                                </a>
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <a class="about_bt" href=@Url.Action("Index", "Categoria")>
+                                    <span></span>
+                                    <div class="coffee_img"><img src="~/Content/images/banner-img.png"></div>
+                                    <h2>
+                                        Categorias
+                                    </h2>
+                                </a>
+
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <a href=@Url.Action("Index", "Usuario")>
+                                    <span></span>
+                                    <div class="coffee_img"><img src="~/Content/images/img-1.png"></div>
+                                    <h2>
+                                        Usuários
+                                    </h2>
+                                </a>
+
+                            </div>
+                            <div class="col-lg-3 col-md-6">
+                                <a href=@Url.Action("Index", "Home")>
+                                    <span></span>
+                                    <div class="coffee_img"><img src="~/Content/images/img-3.png"></div>
+                                    <h2>
+                                        Outros
+                                    </h2>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+</div>
+<!-- Menu section end -->
+
